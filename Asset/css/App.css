@@ -1,0 +1,222 @@
+/* ฟ้อนท์ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* ตกแต่ง */
+:root{
+--c-brand: rgb(105 97 43);
+--c-dark: #333;
+--c-body: #666;
+--f-base: "Plus Jakarta Sans", sans-serif;
+--n-height: 100px;
+}
+
+*, *::before, *::after{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth ;
+}
+
+body{
+    color: var(--c-body);
+    font-family: var(--f-base);
+    line-height: 1.2 ;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--c-dark);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.heading-1{
+    font-size: clamp(32px, 6vw, 54px); 
+}
+
+.heading-2{
+    font-size: clamp(28px, 4vw, 36px); 
+}
+
+.heading-3{
+    font-size: 20px; 
+}
+
+a{
+    color: var(--c-dark);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover{
+    color: var(--c-brand);
+}
+
+.logo { max-width: 150px; 
+    height: auto;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+section{
+    padding: 140px 0;
+
+}
+
+.container{
+    max-width: 2000px;
+    width: 100%;
+    margin: 0 auto ;
+     background-color:rgb(250 240 232) ;
+padding-left: 24px ;
+padding-right: 24px;
+
+}
+
+.btn{
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--c-brand);
+    font-family: var(--f-base);
+    padding: 14px 34px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+    /* border-radius: 20px; */
+}
+
+.btn:hover{
+background-color: var(--c-brand);
+color: azure;
+}
+
+/* Navbar */
+navbar{
+    background-color: azure;
+    position: fixed;
+    width:100% ;
+    padding-bottom: 30px;
+    height: var(--n-height);
+    display: flex;
+    z-index: 999;
+}
+
+.navbar .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--c-brand);
+}
+
+/* .brand{
+    color: white;
+    font-size: 28px;
+} */
+
+.nav-links{
+    display: flex;
+}
+
+.nav-links li:not(:last-child){
+    margin-right: 44px;
+}
+
+.nav-links li.active a{
+    box-shadow:  0 2px var(--c-brand);
+   }
+
+.nav-links li a{
+    color: black;
+font-size: 15px;
+letter-spacing: 1px;
+}
+
+.nav-links li a:hover{
+    color: var(--c-brand);
+}
+
+.hamburger{
+    display: block;
+    cursor: pointer;
+    display: none;
+}   
+
+.hamburger span{
+    display: block;
+    width: 34px;
+    height: 2px;
+    background-color: var(--c-brand);
+    margin: 8px auto;
+    transition: all 0.4s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: translateY(5px) rotate(45deg); 
+}
+
+.hamburger.active span:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg); 
+    }
+
+.scrolled{
+    background-color: azure;
+  /*   box-shadow: 0 2px 10px var(--c-brand); */
+}
+
+.scrolled .brand{
+    color: var(--c-dark);
+}
+
+.scrolled .nav-links li a{
+    color: var(--c-dark);
+}
+
+.scrolled .nav-links li a:hover{
+color: var(--c-brand);
+}
+
+.scrolled .hamburger span{
+    background-color: var(--c-dark);
+}
+
+@media (max-width: 768px) {
+.nav-links{
+    position: fixed;
+    top: var(--n-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 24px;
+    transition: all 0.3s ease-in-out ;
+    height: 0;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.nav-links li a {
+    color: var(--c-dark);
+}
+
+.nav-links.active{
+    height: 190px;
+}
+
+.nav-links li{
+    padding: 6px 0;
+}
+
+.hamburger{
+    display: block;
+}
+}
